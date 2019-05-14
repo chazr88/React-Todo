@@ -11,7 +11,7 @@ export class TodoList extends Component {
     return (
       <div>
       {this.props.todos.map(todo => (
-        <Todo key={todo.id} todo={todo} />
+        <Todo key={todo.id} markComplete={this.props.markComplete} todo={todo} />
       ))}
 
       </div>

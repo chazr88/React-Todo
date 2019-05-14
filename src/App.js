@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   todoHandler = event => {
+    
     this.setState({ task: event.target.value });
   };
 
@@ -38,28 +39,38 @@ class App extends React.Component {
     };
 
     this.setState({
-      todos: [...this.state.todos, newTodo]
+      todos: [...this.state.todos, newTodo],
+      task: ""
     });
   };
 
+  markComplete = (todo) => {
+    todo.completed = !todo.completed
+    console.log(todo.completed)
+    this.setState({ completed: todo.completed })
+    if(todo.completed === true){
+    }
+  }
+
   clearCompleted = event => {
+    event.preventDefault();
     if(this.state.completed === true){
-      //Some code
+     this.setState({ todos: [...this.state.todos.filter(todo => todo.completed === false)]})
     }
   }
 
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={this.state.todos} />
+        <h2>ToDo App!</h2>
+        <TodoList markComplete={this.markComplete} todos={this.state.todos} />
         <TodoForm
         todoHandler={this.todoHandler}
-        addTodo={this.addtodo}
+        addTodo={this.addTodo}
         clearCompleted={this.clearCompleted}
-        task={this.props.task}
-        id={this.props.id}
-        completed={this.props.completed}
+        task={this.state.task}
+        id={this.state.id}
+        completed={this.state.completed}
        />
       </div>
     );
