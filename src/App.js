@@ -26,7 +26,6 @@ class App extends React.Component {
   }
 
   todoHandler = event => {
-    
     this.setState({ task: event.target.value });
   };
 
@@ -46,7 +45,6 @@ class App extends React.Component {
 
   markComplete = (todo) => {
     todo.completed = !todo.completed
-    console.log(todo.completed)
     this.setState({ completed: todo.completed })
     if(todo.completed === true){
     }

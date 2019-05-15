@@ -18,7 +18,6 @@ class Todo extends React.Component {
             return(
                 <div onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
             )
-                
         }
     }
 
@@ -29,23 +28,9 @@ class Todo extends React.Component {
                 {this.lineItem()}
             </div>
         )
-        // if(this.props.todo.complete === true){
-        //     return (
 
-        //         <div style={this.style} onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
-    
-        //     )
-        // } else {
-        //     return (
-
-        //         <div onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
-    
-        //     )
-
-        // }
- 
     }
-    }
+}
 
 
 export default Todo
