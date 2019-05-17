@@ -1,9 +1,11 @@
+  
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import "./App.css"
 
 
 class App extends React.Component {
@@ -59,18 +61,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>ToDo App!</h2>
-        <TodoList markComplete={this.markComplete} todos={this.state.todos} />
-        <TodoForm
-        todoHandler={this.todoHandler}
-        addTodo={this.addTodo}
-        clearCompleted={this.clearCompleted}
-        task={this.state.task}
-        id={this.state.id}
-        completed={this.state.completed}
-       />
+      <div className="container">
+        <div className="app">
+          <h1>Todos</h1>
+          <TodoForm
+          todoHandler={this.todoHandler}
+          addTodo={this.addTodo}
+          clearCompleted={this.clearCompleted}
+          task={this.state.task}
+          id={this.state.id}
+          completed={this.state.completed}
+          />
+          <TodoList markComplete={this.markComplete} todos={this.state.todos} />
+
+        </div>
+
       </div>
+
     );
   }
 }

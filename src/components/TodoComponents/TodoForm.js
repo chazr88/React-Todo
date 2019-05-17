@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './TodoForm.css';
 
 class TodoForm extends React.Component {
     constructor(props){
@@ -9,17 +10,20 @@ class TodoForm extends React.Component {
     }
     render(){
         return (
-            <form>
-                <input 
-                type="text"
-                value={this.props.task}
-                placeholder="task"
-                name="task"
-                onChange={this.props.todoHandler}
-                />
-                <button onClick={this.props.addTodo}>Add Todo</button>
-                <button onClick={this.props.clearCompleted}>Clear Completed</button>
-            </form>
+            <div className="form-div">
+                <form>
+                    <input 
+                    type="text"
+                    value={this.props.task}
+                    placeholder="Task"
+                    name="task"
+                    onChange={this.props.todoHandler}
+                    />
+                    <button onClick={this.props.addTodo}>Add Todo</button>
+                    <button onClick={this.props.clearCompleted}>Clear Completed</button>
+                </form>
+            </div>
+
         )
     }
     

@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Todo.css"
 
 class Todo extends React.Component {
     constructor(props){
@@ -12,11 +13,11 @@ class Todo extends React.Component {
     lineItem() {
         if (this.props.todo.completed === true) {
             return(
-                <div style={this.style} onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
+                <div className="item" style={this.style} onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
             )
         } else {
             return(
-                <div onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
+                <div className="item" onClick={this.props.markComplete.bind(this, this.props.todo)} >{this.props.todo.task}</div>
             )
         }
     }
